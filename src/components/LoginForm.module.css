@@ -1,0 +1,41 @@
+.form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: violet;
+  padding: 2rem 4rem;
+}
+
+.label-wrap {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.label {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.input {
+  padding: 1rem;
+  border: 1px solid transparent;
+}
+
+.input:focus {
+  outline: none;
+  border: 1px solid darkviolet;
+}
+
+.login-btn {
+  font-size: 1.6rem;
+  font-weight: 700;
+  background-color: darkviolet;
+  color: #fff;
+}
+
+.login-btn:hover {
+  background-color: #fff;
+  color: darkviolet;
+}

@@ -1,0 +1,14 @@
+.button {
+  padding: 1rem;
+  border: 1px solid transparent;
+  transition: all 0.2s ease-out;
+}
+
+.button:hover {
+  cursor: pointer;
+  transform: translateY(-0.2rem);
+}
+
+.button:active {
+  transform: translateY(0.2rem);
+}
