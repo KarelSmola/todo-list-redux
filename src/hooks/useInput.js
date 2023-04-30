@@ -12,9 +12,10 @@ const useInput = (validate) => {
     setInputBlur(true);
   };
 
-  const inputIsTouched = () => {
-    setInputBlur(true)
-  }
+  const resetValues = () => {
+    setInputValue("");
+    setInputBlur(false);
+  };
 
   const inputIsValid = validate(inputValue);
   const inputIsInvalid = !inputIsValid && inputBlur;
@@ -23,7 +24,7 @@ const useInput = (validate) => {
     inputValue,
     inputChangeHandler,
     inputBlurHandler,
-    inputIsTouched,
+    resetValues,
     inputIsValid,
     inputIsInvalid,
   };

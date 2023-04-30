@@ -9,24 +9,40 @@ const LoginForm = () => {
     inputValue: userName,
     inputChangeHandler: userNameChangeHandler,
     inputBlurHandler: userNameBlurHandler,
-    inputIsTouched: userNameIsTouched,
+    resetValues: userNameResetValues,
     inputIsValid: userNameIsValid,
     inputIsInvalid: userNameIsInvalid,
   } = useInput((value) => value.trim() !== "");
 
+  const {
+    inputValue: password,
+    inputChangeHandler: passwordChangeHandler,
+    inputBlurHandler: passwordBlurHandler,
+    resetValues: passwordResetValues,
+    inputIsValid: passwordIsValid,
+    inputIsInvalid: passwordIsInvalid,
+  } = useInput((value) => value.trim().length > 3);
+
   const submitHandler = (event) => {
     event.preventDefault();
 
-    userNameIsTouched();
+    userNameBlurHandler();
+    passwordBlurHandler();
 
-    if (!userNameIsValid) {
+    if (!userNameIsValid || !passwordIsValid) {
       return;
     }
 
-    console.log(userName);
+    console.log(userName, password);
+    userNameResetValues();
+    passwordResetValues();
   };
 
   const userNameClasses = userNameIsInvalid
+    ? `${classes.input} ${classes.invalid}`
+    : `${classes.input}`;
+
+  const passwordClasses = passwordIsInvalid
     ? `${classes.input} ${classes.invalid}`
     : `${classes.input}`;
 
@@ -48,7 +64,13 @@ const LoginForm = () => {
         <label className={classes.label} htmlFor="password">
           Password
         </label>
-        <input className={classes.input} type="password" id="password" />
+        <input
+          className={passwordClasses}
+          type="password"
+          id="password"
+          onChange={passwordChangeHandler}
+          onBlur={passwordBlurHandler}
+        />
       </div>
       <Button type="submit" className={classes["login-btn"]}>
         Login
