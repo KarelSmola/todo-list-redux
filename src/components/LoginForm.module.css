@@ -28,6 +28,11 @@
   border: 1px solid darkviolet;
 }
 
+.invalid {
+  border: 1px solid red;
+  background-color: pink;
+}
+
 .login-btn {
   font-size: 1.6rem;
   font-weight: 700;
