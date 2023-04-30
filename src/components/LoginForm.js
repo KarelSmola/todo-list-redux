@@ -1,10 +1,14 @@
 import React from "react";
 import useInput from "../hooks/useInput";
+import { useDispatch } from "react-redux";
+import { loginActions } from "../store/loginSlice";
 
 import Button from "./UI/Button";
 import classes from "./LoginForm.module.css";
 
 const LoginForm = () => {
+  const dispatch = useDispatch();
+
   const {
     inputValue: userName,
     inputChangeHandler: userNameChangeHandler,
@@ -33,6 +37,7 @@ const LoginForm = () => {
       return;
     }
 
+    dispatch(loginActions.login({ userName: userName, password: password }));
     console.log(userName, password);
     userNameResetValues();
     passwordResetValues();

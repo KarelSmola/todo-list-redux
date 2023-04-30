@@ -4,8 +4,9 @@ const loginSlice = createSlice({
   name: "login",
   initialState: { isLoggedIn: false, userName: "" },
   reducers: {
-    login(state) {
+    login(state, action) {
       state.isLoggedIn = true;
+      state.userName = action.payload.userName;
     },
     logout(state) {
       state.isLoggedIn = false;
