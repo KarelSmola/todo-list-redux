@@ -13,7 +13,7 @@ const LoginForm = () => {
     inputValue: userName,
     inputChangeHandler: userNameChangeHandler,
     inputBlurHandler: userNameBlurHandler,
-    resetValues: userNameResetValues,
+    // resetValues: userNameResetValues,
     inputIsValid: userNameIsValid,
     inputIsInvalid: userNameIsInvalid,
   } = useInput((value) => value.trim() !== "");
@@ -37,9 +37,9 @@ const LoginForm = () => {
       return;
     }
 
-    dispatch(loginActions.login({ userName: userName, password: password }));
+    dispatch(loginActions.login({ userName: userName }));
 
-    userNameResetValues();
+    // userNameResetValues();
     passwordResetValues();
   };
 
@@ -61,6 +61,7 @@ const LoginForm = () => {
           className={userNameClasses}
           type="text"
           id="name"
+          value={userName}
           onChange={userNameChangeHandler}
           onBlur={userNameBlurHandler}
         />
@@ -73,6 +74,7 @@ const LoginForm = () => {
           className={passwordClasses}
           type="password"
           id="password"
+          value={password}
           onChange={passwordChangeHandler}
           onBlur={passwordBlurHandler}
         />

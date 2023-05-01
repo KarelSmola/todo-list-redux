@@ -1,0 +1,11 @@
+.todos-info-wrap {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  width: 30vw;
+  border: 1px solid var(--color-primary);
+}
+
+.todos-info {
+  font-size: 1.6rem;
+}
