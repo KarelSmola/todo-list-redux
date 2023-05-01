@@ -2,13 +2,19 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const todoSlice = createSlice({
   name: "todo",
-  initialState: { todos: [] },
-  reducer: {
+  initialState: { todo: "", todoInputIsTouched: false, todos: [] },
+  reducers: {
+    todoChangeHandler(state, action) {
+      state.todo = action.payload;
+    },
     addTodo(state, action) {
-     state.todos =  state.todos.push(action.payload.todo)
+      state.todos.push(action.payload);
+    },
+    resetValues(state) {
+      state.todo = "";
     },
   },
 });
 
-export const todoActions = todoSlice.actions
-export default todoSlice
+export const todoActions = todoSlice.actions;
+export default todoSlice;

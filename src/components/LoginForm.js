@@ -38,7 +38,7 @@ const LoginForm = () => {
     }
 
     dispatch(loginActions.login({ userName: userName, password: password }));
-    console.log(userName, password);
+
     userNameResetValues();
     passwordResetValues();
   };
