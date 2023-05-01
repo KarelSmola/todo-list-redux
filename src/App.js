@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import LoginForm from "./components/LoginForm";
 import Header from "./components/Header";
-import TodoForm from "./components/Todos/TodoForm";
+import Todos from "./components/Todos/Todos";
 
 const App = () => {
   const isLoggedIn = useSelector((state) => state.login.isLoggedIn);
@@ -11,7 +11,7 @@ const App = () => {
     <main>
       {isLoggedIn && <LoginForm />}
       {!isLoggedIn && <Header />}
-      {!isLoggedIn && <TodoForm />}
+      {!isLoggedIn && <Todos />}
     </main>
   );
 };

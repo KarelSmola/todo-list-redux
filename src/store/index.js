@@ -4,7 +4,7 @@ import loginSlice from "./loginSlice";
 import todoSlice from "./todoSlice";
 
 const store = configureStore({
-  reducer: { login: loginSlice.reducer, todo: todoSlice.reducer },
+  reducer: { login: loginSlice.reducer, todos: todoSlice.reducer },
 });
 
 export default store;

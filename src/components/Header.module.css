@@ -1,3 +1,30 @@
-.todos-amount {
+.header {
+  padding: 1rem 2rem;
+  background-color: var(--color-primary);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.login-info {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.user-name {
+  font-size: 2rem;
+}
+
+.logout-btn {
   font-size: 1.6rem;
+  font-weight: 500;
 }

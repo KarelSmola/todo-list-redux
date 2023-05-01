@@ -13,6 +13,11 @@ const todoSlice = createSlice({
     resetValues(state) {
       state.todo = "";
     },
+    removeTodo(state, action) {
+      const id = action.payload;
+      const filteredTodos = state.todos.filter((todo) => todo.id !== id);
+      state.todos = filteredTodos;
+    },
   },
 });
 
