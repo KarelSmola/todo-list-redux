@@ -15,9 +15,22 @@
 }
 
 .input {
+  padding: 1rem;
+  font-size: 1.6rem;
+  border: 1px solid transparent;
+}
+
+.input:focus {
+  outline: none;
+  border: 1px solid #000;
 }
 
 .add-todo-btn {
   font-size: 1.6rem;
   font-weight: 700;
+  background-color: #fff;
+}
+
+.add-todo-btn:hover {
+  color: var(--color-primary);
 }

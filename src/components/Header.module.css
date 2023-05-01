@@ -26,5 +26,12 @@
 
 .logout-btn {
   font-size: 1.6rem;
-  font-weight: 500;
+  font-weight: 700;
+  background-color: #fff;
+  color: orangered;
+}
+
+.logout-btn:hover {
+  background-color: orangered;
+  color: #fff;
 }

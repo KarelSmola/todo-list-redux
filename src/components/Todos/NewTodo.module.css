@@ -4,7 +4,7 @@
   align-items: center;
   gap: 1rem;
   padding: 1rem 2rem;
-  width: 30vw;
+  width: 40vw;
   border: 1px solid var(--color-primary);
 }
 
@@ -12,5 +12,16 @@
   font-size: 2rem;
 }
 
-.todo-btn {
+.remove-btn {
+  border: 1px solid orangered;
+  background-color: #fff;
+  color: orangered;
+
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.remove-btn:hover {
+  background-color: orangered;
+  color: #fff;
 }

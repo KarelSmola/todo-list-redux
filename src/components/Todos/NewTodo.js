@@ -16,7 +16,7 @@ const NewTodo = ({ id, title }) => {
     <li className={classes.todo} key={id}>
       <h1 className={classes.title}>{title}</h1>
       <Button
-        className={classes["todo-btn"]}
+        className={classes["remove-btn"]}
         onClick={() => {
           removeTodo(id);
         }}
