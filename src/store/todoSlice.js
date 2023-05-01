@@ -5,7 +5,6 @@ const todoSlice = createSlice({
   initialState: { todo: "", todoInputIsTouched: false, todos: [] },
   reducers: {
     fetchTodos(state, action) {
-      console.log(action.payload);
       state.todos = action.payload;
     },
     todoChangeHandler(state, action) {

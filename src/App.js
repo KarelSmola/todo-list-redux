@@ -29,7 +29,6 @@ const App = () => {
       const response = await fetch(url);
       const data = await response.json();
 
-      console.log(data);
       dispatch(todoActions.fetchTodos(data));
     };
     fetchData();
@@ -46,7 +45,12 @@ const App = () => {
         method: "PUT",
         body: JSON.stringify(todos),
       });
+
+      if (!response.ok) {
+        throw new Error("Something went wrong!!!");
+      }
     };
+
     sendData();
   }, [todos]);
 
