@@ -13,13 +13,15 @@ const App = () => {
   const isLoggedIn = useSelector((state) => state.login.isLoggedIn);
   const todos = useSelector((state) => state.todos.todos);
 
-  if (localStorage.getItem("login")) {
-    dispatch(
-      loginActions.login({
-        userName: localStorage.getItem("login"),
-      })
-    );
-  }
+  useEffect(() => {
+    if (localStorage.getItem("login")) {
+      dispatch(
+        loginActions.login({
+          userName: localStorage.getItem("login"),
+        })
+      );
+    }
+  }, [dispatch]);
 
   const url =
     "https://todo-list-redux-4c58c-default-rtdb.europe-west1.firebasedatabase.app/todos.json";

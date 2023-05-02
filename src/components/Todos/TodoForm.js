@@ -1,4 +1,4 @@
-// import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { todoActions } from "../../store/todoSlice";
 
@@ -9,7 +9,18 @@ const TodoForm = () => {
   const dispatch = useDispatch();
   const todo = useSelector((state) => state.todos.todo);
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      console.log("Input");
+    }, 2000);
+    return () => {
+      console.log("Cleanup");
+      clearTimeout(timer);
+    };
+  }, [todo]);
+
   const todoChange = (event) => {
+    console.log(event.target.value);
     dispatch(todoActions.todoChangeHandler(event.target.value));
   };
 
