@@ -4,6 +4,7 @@ import { loginActions } from "./store/loginSlice";
 import { todoActions } from "./store/todoSlice";
 import LoginForm from "./components/LoginForm";
 import Header from "./components/Header";
+import EditTodo from "./components/Todos/EditTodo";
 import Todos from "./components/Todos/Todos";
 
 let initial = true;
@@ -12,6 +13,7 @@ const App = () => {
   const dispatch = useDispatch();
   const isLoggedIn = useSelector((state) => state.login.isLoggedIn);
   const todos = useSelector((state) => state.todos.todos);
+  const isEditing = useSelector((state) => state.todos.isEditing);
 
   useEffect(() => {
     if (localStorage.getItem("login")) {
@@ -61,6 +63,7 @@ const App = () => {
       <Header />
       {!isLoggedIn && <LoginForm />}
       {isLoggedIn && <Todos />}
+      {isEditing && <EditTodo />}
     </main>
   );
 };

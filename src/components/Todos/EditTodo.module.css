@@ -1,15 +1,28 @@
-.todo {
+.edit-todo-form {
   display: flex;
-  justify-content: space-between;
+  gap: 2rem;
+}
+
+.label-wrap {
+  display: flex;
   align-items: center;
   gap: 1rem;
-  padding: 1rem 2rem;
-  width: 40vw;
+}
+
+.label {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.input {
+  padding: 1rem;
+  font-size: 1.6rem;
   border: 1px solid var(--color-primary);
 }
 
-.title {
-  font-size: 2rem;
+.input:focus {
+  outline: none;
+  border: 1px solid #000;
 }
 
 .buttons-wrap {
@@ -17,7 +30,7 @@
   gap: 1rem;
 }
 
-.edit-btn {
+.save-btn {
   border: 1px solid var(--color-primary);
   background-color: #fff;
   color: var(--color-primary);
@@ -26,11 +39,11 @@
   font-weight: 700;
 }
 
-.edit-btn:hover {
+.save-btn:hover {
   background-color: var(--color-primary);
   color: #fff;
 }
-.remove-btn {
+.cancel-btn {
   border: 1px solid orangered;
   background-color: #fff;
   color: orangered;
@@ -39,7 +52,7 @@
   font-weight: 700;
 }
 
-.remove-btn:hover {
+.cancel-btn:hover {
   background-color: orangered;
   color: #fff;
 }

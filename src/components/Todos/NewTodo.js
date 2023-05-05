@@ -8,6 +8,10 @@ import classes from "./NewTodo.module.css";
 const NewTodo = ({ id, title }) => {
   const dispatch = useDispatch();
 
+  const editTodo = () => {
+    dispatch(todoActions.editTodo());
+  };
+
   const removeTodo = (id) => {
     dispatch(todoActions.removeTodo(id));
   };
@@ -15,14 +19,19 @@ const NewTodo = ({ id, title }) => {
   return (
     <li className={classes.todo} key={id}>
       <h1 className={classes.title}>{title}</h1>
-      <Button
-        className={classes["remove-btn"]}
-        onClick={() => {
-          removeTodo(id);
-        }}
-      >
-        Remove todo
-      </Button>
+      <div className={classes["buttons-wrap"]}>
+        <Button className={classes["edit-btn"]} onClick={editTodo}>
+          Edit
+        </Button>
+        <Button
+          className={classes["remove-btn"]}
+          onClick={() => {
+            removeTodo(id);
+          }}
+        >
+          Remove todo
+        </Button>
+      </div>
     </li>
   );
 };

@@ -2,7 +2,12 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const todoSlice = createSlice({
   name: "todo",
-  initialState: { todo: "", todoInputIsTouched: false, todos: [] },
+  initialState: {
+    todo: "",
+    todoInputIsTouched: false,
+    todos: [],
+    isEditing: false,
+  },
   reducers: {
     fetchTodos(state, action) {
       state.todos = action.payload;
@@ -20,6 +25,9 @@ const todoSlice = createSlice({
       const id = action.payload;
       const filteredTodos = state.todos.filter((todo) => todo.id !== id);
       state.todos = filteredTodos;
+    },
+    editTodo(state) {
+      state.isEditing = true;
     },
   },
 });
