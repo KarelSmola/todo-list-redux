@@ -10,17 +10,13 @@ const TodoForm = () => {
   const todo = useSelector((state) => state.todos.todo);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      console.log("Input");
-    }, 2000);
+    const timer = setTimeout(() => {}, 2000);
     return () => {
-      console.log("Cleanup");
       clearTimeout(timer);
     };
   }, [todo]);
 
   const todoChange = (event) => {
-    console.log(event.target.value);
     dispatch(todoActions.todoChangeHandler(event.target.value));
   };
 
@@ -44,7 +40,7 @@ const TodoForm = () => {
           type="text"
           id="todo"
           onChange={todoChange}
-          value={todo}
+          value={todo.title}
         />
       </div>
       <Button className={classes["add-todo-btn"]} type="submit">

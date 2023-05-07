@@ -3,10 +3,11 @@ import { createSlice } from "@reduxjs/toolkit";
 const todoSlice = createSlice({
   name: "todo",
   initialState: {
-    todo: "",
+    todo: { id: "", title: "" },
     todoInputIsTouched: false,
     todos: [],
     isEditing: false,
+    editingTodo: { id: "", title: "" },
   },
   reducers: {
     fetchTodos(state, action) {
@@ -19,15 +20,23 @@ const todoSlice = createSlice({
       state.todos.push(action.payload);
     },
     resetValues(state) {
-      state.todo = "";
+      state.todo = { id: "", title: "" };
     },
     removeTodo(state, action) {
       const id = action.payload;
       const filteredTodos = state.todos.filter((todo) => todo.id !== id);
       state.todos = filteredTodos;
     },
-    editTodo(state) {
+    editTodoForm(state, action) {
       state.isEditing = true;
+      const editedTodo = action.payload;
+      state.editingTodo = { id: editedTodo.id, title: editedTodo.title };
+    },
+    editChangeHandler(state, action) {
+      state.editingTodo = action.payload;
+    },
+    editTodo(state, action) {
+      console.log(action.payload);
     },
   },
 });
