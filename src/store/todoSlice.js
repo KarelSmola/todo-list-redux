@@ -27,10 +27,9 @@ const todoSlice = createSlice({
       const filteredTodos = state.todos.filter((todo) => todo.id !== id);
       state.todos = filteredTodos;
     },
-    editTodoForm(state, action) {
+    editTodo(state, action) {
       state.isEditing = true;
-      const editedTodo = action.payload;
-      state.editingTodo = { id: editedTodo.id, title: editedTodo.title };
+      state.editingTodo = { ...action.payload };
     },
     editChangeHandler(state, action) {
       state.editingTodo = action.payload;

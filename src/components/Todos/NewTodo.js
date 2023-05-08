@@ -9,7 +9,7 @@ const NewTodo = ({ id, title }) => {
   const dispatch = useDispatch();
 
   const editTodo = (todo) => {
-    dispatch(todoActions.editTodoForm(todo));
+    dispatch(todoActions.editTodo(todo));
   };
 
   const removeTodo = (id) => {

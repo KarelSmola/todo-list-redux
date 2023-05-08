@@ -1,4 +1,5 @@
-import React from "react";
+import React, { Fragment } from "react";
+import { createPortal } from "react-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { todoActions } from "../../store/todoSlice";
 
@@ -28,28 +29,40 @@ const EditTodo = () => {
   };
 
   return (
-    <form className={classes["edit-todo-form"]} onSubmit={submitChangeHandler}>
-      <div className={classes["label-wrap"]}>
-        <label className={classes.label} htmlFor="edit-todo">
-          Edit todo:{" "}
-        </label>
-        <input
-          className={classes.input}
-          name="edit-todo"
-          type="text"
-          onChange={inputChangeHandler}
-          value={editingTodo.title}
-        />
-      </div>
-      <div className={classes["buttons-wrap"]}>
-        <Button className={classes["save-btn"]} type="submit">
-          Save
-        </Button>
-        <Button className={classes["cancel-btn"]} onClick={cancelForm}>
-          Cancel
-        </Button>
-      </div>
-    </form>
+    <Fragment>
+      {createPortal(
+        <div className={classes.backdrop} />,
+        document.getElementById("backdrop")
+      )}
+      {createPortal(
+        <form
+          className={classes["edit-todo-form"]}
+          onSubmit={submitChangeHandler}
+        >
+          <div className={classes["label-wrap"]}>
+            <label className={classes.label} htmlFor="edit-todo">
+              Edit todo:{" "}
+            </label>
+            <input
+              className={classes.input}
+              name="edit-todo"
+              type="text"
+              onChange={inputChangeHandler}
+              value={editingTodo.title}
+            />
+          </div>
+          <div className={classes["buttons-wrap"]}>
+            <Button className={classes["save-btn"]} type="submit">
+              Save
+            </Button>
+            <Button className={classes["cancel-btn"]} onClick={cancelForm}>
+              Cancel
+            </Button>
+          </div>
+        </form>,
+        document.getElementById("modal")
+      )}
+    </Fragment>
   );
 };
 

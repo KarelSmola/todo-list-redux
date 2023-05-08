@@ -6,6 +6,7 @@
   padding: 1rem 2rem;
   width: 40vw;
   border: 1px solid var(--color-primary);
+  transition: all 0.5s;
 }
 
 .title {
