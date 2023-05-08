@@ -35,8 +35,15 @@ const todoSlice = createSlice({
     editChangeHandler(state, action) {
       state.editingTodo = action.payload;
     },
-    editTodo(state, action) {
-      console.log(action.payload);
+    saveEditingTodo(state, action) {
+      const editingTodoIndex = state.todos.findIndex(
+        (todo) => todo.id === action.payload.id
+      );
+      state.todos[editingTodoIndex].title = action.payload.title;
+      state.isEditing = false;
+    },
+    cancelEditForm(state) {
+      state.isEditing = false;
     },
   },
 });

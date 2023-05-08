@@ -8,15 +8,23 @@ import classes from "./EditTodo.module.css";
 const EditTodo = () => {
   const dispatch = useDispatch();
   const editingTodo = useSelector((state) => state.todos.editingTodo);
-  console.log(editingTodo);
 
   const inputChangeHandler = (event) => {
-    dispatch(todoActions.editChangeHandler(event.target.value, editingTodo.id));
+    dispatch(
+      todoActions.editChangeHandler({
+        id: editingTodo.id,
+        title: event.target.value,
+      })
+    );
   };
 
   const submitChangeHandler = (event) => {
     event.preventDefault();
-    dispatch(todoActions.editTodo(editingTodo));
+    dispatch(todoActions.saveEditingTodo(editingTodo));
+  };
+
+  const cancelForm = () => {
+    dispatch(todoActions.cancelEditForm());
   };
 
   return (
@@ -37,7 +45,9 @@ const EditTodo = () => {
         <Button className={classes["save-btn"]} type="submit">
           Save
         </Button>
-        <Button className={classes["cancel-btn"]}>Cancel</Button>
+        <Button className={classes["cancel-btn"]} onClick={cancelForm}>
+          Cancel
+        </Button>
       </div>
     </form>
   );
