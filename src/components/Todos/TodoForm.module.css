@@ -6,18 +6,21 @@
 }
 
 .form {
-  padding: 1rem 2rem;
-  background-color: var(--color-primary);
+  padding: 2rem 4rem;
+  border: 1px solid var(--color-primary);
+
+  box-shadow: 4px 4px 0px var(--color-primary);
 }
 
 .label {
-  font-size: 2rem;
+  font-size: 2.5rem;
+  font-weight: 700;
 }
 
 .input {
   padding: 1rem;
   font-size: 1.6rem;
-  border: 1px solid transparent;
+  border: 1px solid var(--color-primary);
 }
 
 .input:focus {
@@ -26,11 +29,18 @@
 }
 
 .add-todo-btn {
-  font-size: 1.6rem;
+  font-size: 2rem;
   font-weight: 700;
   background-color: #fff;
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
 }
 
 .add-todo-btn:hover {
-  color: var(--color-primary);
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+.add-todo-btn:focus {
+  outline: 1px solid var(--color-primary);
 }

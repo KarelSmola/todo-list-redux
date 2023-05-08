@@ -11,6 +11,7 @@
 
 .title {
   font-size: 2rem;
+  font-weight: 500;
 }
 
 .buttons-wrap {
@@ -22,7 +23,6 @@
   border: 1px solid var(--color-primary);
   background-color: #fff;
   color: var(--color-primary);
-
   font-size: 1.6rem;
   font-weight: 700;
 }
@@ -31,11 +31,15 @@
   background-color: var(--color-primary);
   color: #fff;
 }
+
+.edit-btn:focus {
+  outline: 1px solid var(--color-primary);
+}
+
 .remove-btn {
   border: 1px solid orangered;
   background-color: #fff;
   color: orangered;
-
   font-size: 1.6rem;
   font-weight: 700;
 }
@@ -43,4 +47,8 @@
 .remove-btn:hover {
   background-color: orangered;
   color: #fff;
+}
+
+.remove-btn:focus {
+  outline: 1px solid orangered;
 }
