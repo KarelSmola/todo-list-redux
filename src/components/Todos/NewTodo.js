@@ -2,7 +2,6 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { todoActions } from "../../store/todoSlice";
 
-// import { Edit } from "../UI/Icons/Icons";
 import { Trash, Edit } from "../UI/Icons/Icons";
 import Button from "../UI/Button";
 import classes from "./NewTodo.module.css";
