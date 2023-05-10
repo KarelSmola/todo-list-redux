@@ -3,6 +3,7 @@ import { createPortal } from "react-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { todoActions } from "../../store/todoSlice";
 
+import { Save, Close } from "../UI/Icons/Icons";
 import Button from "../UI/Button";
 import classes from "./EditTodo.module.css";
 
@@ -53,10 +54,10 @@ const EditTodo = () => {
           </div>
           <div className={classes["buttons-wrap"]}>
             <Button className={classes["save-btn"]} type="submit">
-              Save
+              <Save />
             </Button>
             <Button className={classes["cancel-btn"]} onClick={cancelForm}>
-              Cancel
+              <Close />
             </Button>
           </div>
         </form>,

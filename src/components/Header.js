@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { loginActions } from "../store/loginSlice";
 
+import { LogOut } from "./UI/Icons/Icons";
 import Button from "./UI/Button";
 import classes from "./Header.module.css";
 
@@ -22,7 +23,7 @@ const Header = () => {
           <div className={classes["login-info"]}>
             <h1 className={classes["user-name"]}>User name: {userName}</h1>
             <Button className={classes["logout-btn"]} onClick={logoutHandler}>
-              Log out
+              <LogOut />
             </Button>
           </div>
         )}

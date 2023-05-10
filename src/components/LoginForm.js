@@ -3,6 +3,7 @@ import useInput from "../hooks/useInput";
 import { useDispatch } from "react-redux";
 import { loginActions } from "../store/loginSlice";
 
+import { LogIn } from "./UI/Icons/Icons";
 import Button from "./UI/Button";
 import classes from "./LoginForm.module.css";
 
@@ -80,7 +81,7 @@ const LoginForm = () => {
         />
       </div>
       <Button type="submit" className={classes["login-btn"]}>
-        Login
+        <LogIn />
       </Button>
     </form>
   );

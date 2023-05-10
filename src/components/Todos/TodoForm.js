@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { todoActions } from "../../store/todoSlice";
 
+import { Add } from "../UI/Icons/Icons";
 import Button from "../UI/Button";
 import classes from "./TodoForm.module.css";
 
@@ -44,7 +45,7 @@ const TodoForm = () => {
         />
       </div>
       <Button className={classes["add-todo-btn"]} type="submit">
-        Add todo
+        <Add />
       </Button>
     </form>
   );
