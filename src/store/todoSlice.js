@@ -8,6 +8,7 @@ const todoSlice = createSlice({
     todos: [],
     isEditing: false,
     editingTodo: { id: "", title: "" },
+    newTodo: false
   },
   reducers: {
     fetchTodos(state, action) {
@@ -18,6 +19,7 @@ const todoSlice = createSlice({
     },
     addTodo(state, action) {
       state.todos.push(action.payload);
+      state.newTodo = true
     },
     resetValues(state) {
       state.todo = { id: "", title: "" };

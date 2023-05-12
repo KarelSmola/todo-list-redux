@@ -6,6 +6,7 @@
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(4px);
+  z-index: 2;
 }
 
 .edit-todo-form {
@@ -18,8 +19,12 @@
   padding: 2rem 4rem;
   background-color: #fff;
   box-shadow: 4px 4px 0px var(--color-primary);
-  z-index: 1;
+  z-index: 3;
   transition: all 0.5s ease-out;
+}
+
+.showEditForm {
+  animation: showEditForm 0.5s ease-out forwards;
 }
 
 @keyframes showEditForm {
@@ -33,8 +38,8 @@
   }
 }
 
-.showEditForm {
-  animation: showEditForm 0.5s ease-out;
+.hideEditForm {
+  animation: hideEditForm 0.5s ease-out forwards;
 }
 
 @keyframes hideEditForm {
@@ -45,10 +50,6 @@
   100% {
     opacity: 0;
   }
-}
-
-.hideEditForm {
-  animation: hideEditForm 0.5s ease-out;
 }
 
 .label-wrap {

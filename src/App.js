@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { Transition } from "react-transition-group";
 import { useSelector, useDispatch } from "react-redux";
 import { loginActions } from "./store/loginSlice";
 import { todoActions } from "./store/todoSlice";
@@ -7,6 +6,7 @@ import LoginForm from "./components/LoginForm";
 import Header from "./components/Header";
 import EditTodo from "./components/Todos/EditTodo";
 import Todos from "./components/Todos/Todos";
+import LogoutModal from "./components/UI/LogoutModal";
 
 let initial = true;
 
@@ -15,6 +15,7 @@ const App = () => {
   const isLoggedIn = useSelector((state) => state.login.isLoggedIn);
   const todos = useSelector((state) => state.todos.todos);
   const isEditing = useSelector((state) => state.todos.isEditing);
+  const logoutModal = useSelector((state) => state.login.logoutModal);
 
   useEffect(() => {
     if (localStorage.getItem("login")) {
@@ -64,11 +65,8 @@ const App = () => {
       <Header />
       {!isLoggedIn && <LoginForm />}
       {isLoggedIn && <Todos />}
-      <Transition in={isEditing} timeout={500} mountOnEnter unmountOnExit>
-        {(state) => <EditTodo show={state} />}
-      </Transition>
-
-      {/* {isEditing && <EditTodo />} */}
+      <EditTodo show={isEditing} />
+      <LogoutModal show={logoutModal} />
     </main>
   );
 };

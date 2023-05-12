@@ -1,0 +1,84 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 2;
+}
+
+.logout-wrap {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  padding: 3rem;
+  border: 1px solid orangered;
+  background-color: #fff;
+  box-shadow: 4px 4px orangered;
+  color: orangered;
+  z-index: 3;
+}
+
+.logout-title {
+  font-size: 3rem;
+}
+
+.logout-text {
+  font-size: 2rem;
+  line-height: 1.5;
+}
+
+.showModal {
+  animation: showModal 0.5s ease-out forwards;
+}
+
+@keyframes showModal {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.hideModal {
+  animation: hideModal 0.5s ease-out forwards;
+}
+
+@keyframes hideModal {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.buttons-wrap {
+  display: flex;
+  gap: 1rem;
+}
+
+.buttons-wrap button {
+  width: 15rem;
+  border: 1px solid orangered;
+  background-color: #fff;
+  color: orangered;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.buttons-wrap button:hover {
+  background-color: orangered;
+  color: #fff;
+}
