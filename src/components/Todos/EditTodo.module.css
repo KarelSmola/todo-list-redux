@@ -19,7 +19,36 @@
   background-color: #fff;
   box-shadow: 4px 4px 0px var(--color-primary);
   z-index: 1;
-  transition: all 0.3s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+@keyframes showEditForm {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(-50%);
+  }
+}
+
+.showEditForm {
+  animation: showEditForm 0.5s ease-out;
+}
+
+@keyframes hideEditForm {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.hideEditForm {
+  animation: hideEditForm 0.5s ease-out;
 }
 
 .label-wrap {

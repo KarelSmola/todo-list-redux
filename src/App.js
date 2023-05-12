@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Transition } from "react-transition-group";
 import { useSelector, useDispatch } from "react-redux";
 import { loginActions } from "./store/loginSlice";
 import { todoActions } from "./store/todoSlice";
@@ -63,7 +64,11 @@ const App = () => {
       <Header />
       {!isLoggedIn && <LoginForm />}
       {isLoggedIn && <Todos />}
-      {isEditing && <EditTodo />}
+      <Transition in={isEditing} timeout={500} mountOnEnter unmountOnExit>
+        {(state) => <EditTodo show={state} />}
+      </Transition>
+
+      {/* {isEditing && <EditTodo />} */}
     </main>
   );
 };

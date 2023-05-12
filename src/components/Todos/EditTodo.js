@@ -7,7 +7,7 @@ import { Save, Close } from "../UI/Icons/Icons";
 import Button from "../UI/Button";
 import classes from "./EditTodo.module.css";
 
-const EditTodo = () => {
+const EditTodo = (props) => {
   const dispatch = useDispatch();
   const editingTodo = useSelector((state) => state.todos.editingTodo);
 
@@ -29,6 +29,15 @@ const EditTodo = () => {
     dispatch(todoActions.cancelEditForm());
   };
 
+  const formClasses = [
+    classes["edit-todo-form"],
+    props.show === "entering"
+      ? classes.showEditForm
+      : props.show === "exiting"
+      ? classes.hideEditForm
+      : null,
+  ];
+
   return (
     <Fragment>
       {createPortal(
@@ -37,7 +46,8 @@ const EditTodo = () => {
       )}
       {createPortal(
         <form
-          className={classes["edit-todo-form"]}
+          // className={classes["edit-todo-form"]}
+          className={formClasses.join(" ")}
           onSubmit={submitChangeHandler}
         >
           <div className={classes["label-wrap"]}>
