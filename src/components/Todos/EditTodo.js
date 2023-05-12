@@ -8,6 +8,11 @@ import { Save, Close } from "../UI/Icons/Icons";
 import Button from "../UI/Button";
 import classes from "./EditTodo.module.css";
 
+const animationTimes = {
+  enter: 500,
+  exit: 1000
+}
+
 const EditTodo = (props) => {
   const dispatch = useDispatch();
   const editingTodo = useSelector((state) => state.todos.editingTodo);
@@ -31,7 +36,7 @@ const EditTodo = (props) => {
   };
 
   return (
-    <Transition in={props.show} timeout={500} mountOnEnter unmountOnExit>
+    <Transition in={props.show} timeout={animationTimes} mountOnEnter unmountOnExit>
       {(state) => {
         const formClasses = `${classes["edit-todo-form"]} ${
           state === "entering"

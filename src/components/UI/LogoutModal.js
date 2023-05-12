@@ -7,6 +7,11 @@ import { Transition } from "react-transition-group";
 import Button from "./Button";
 import classes from "./LogoutModal.module.css";
 
+const animationTimes = {
+  enter: 500,
+  exit: 1000,
+};
+
 const LogoutModal = (props) => {
   const dispatch = useDispatch();
 
@@ -19,7 +24,12 @@ const LogoutModal = (props) => {
   };
 
   return (
-    <Transition in={props.show} timeout={500} mountOnEnter unmountOnExit>
+    <Transition
+      in={props.show}
+      timeout={animationTimes}
+      mountOnEnter
+      unmountOnExit
+    >
       {(state) => {
         const lougoutModalClasses = `${classes["logout-wrap"]} ${
           state === "entering"
@@ -38,6 +48,7 @@ const LogoutModal = (props) => {
             {createPortal(
               <div className={lougoutModalClasses}>
                 <h1 className={classes["logout-title"]}>!!! INFO !!!</h1>
+
                 <p className={classes["logout-text"]}>
                   Since this is only test project, all todos will be remove
                   after logout.

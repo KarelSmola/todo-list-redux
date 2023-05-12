@@ -51,7 +51,7 @@
 }
 
 .hideModal {
-  animation: hideModal 0.5s ease-out forwards;
+  animation: hideModal 1s ease-out forwards;
 }
 
 @keyframes hideModal {

@@ -39,7 +39,7 @@
 }
 
 .hideEditForm {
-  animation: hideEditForm 0.5s ease-out forwards;
+  animation: hideEditForm 1s ease-out forwards;
 }
 
 @keyframes hideEditForm {
