@@ -5,10 +5,11 @@ const todoSlice = createSlice({
   initialState: {
     todo: { id: "", title: "" },
     todoInputIsTouched: false,
+    todoInput: "",
     todos: [],
     isEditing: false,
     editingTodo: { id: "", title: "" },
-    newTodo: false
+    newTodo: false,
   },
   reducers: {
     fetchTodos(state, action) {
@@ -16,10 +17,14 @@ const todoSlice = createSlice({
     },
     todoChangeHandler(state, action) {
       state.todo = action.payload;
+      state.todoInput = action.payload;
+    },
+    todoBlurHandler(state) {
+      state.todoInputIsTouched = true;
     },
     addTodo(state, action) {
       state.todos.push(action.payload);
-      state.newTodo = true
+      state.newTodo = true;
     },
     resetValues(state) {
       state.todo = { id: "", title: "" };

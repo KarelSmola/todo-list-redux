@@ -64,6 +64,14 @@
   }
 }
 
+.animation-enter-active {
+  animation: showModal 0.5s ease-out forwards;
+}
+
+.animation-exit-active {
+  animation: hideModal 1s ease-out forwards;
+}
+
 .buttons-wrap {
   display: flex;
   gap: 1rem;

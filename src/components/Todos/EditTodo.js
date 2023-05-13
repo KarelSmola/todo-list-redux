@@ -10,8 +10,8 @@ import classes from "./EditTodo.module.css";
 
 const animationTimes = {
   enter: 500,
-  exit: 1000
-}
+  exit: 1000,
+};
 
 const EditTodo = (props) => {
   const dispatch = useDispatch();
@@ -36,7 +36,12 @@ const EditTodo = (props) => {
   };
 
   return (
-    <Transition in={props.show} timeout={animationTimes} mountOnEnter unmountOnExit>
+    <Transition
+      in={props.show}
+      timeout={animationTimes}
+      mountOnEnter
+      unmountOnExit
+    >
       {(state) => {
         const formClasses = `${classes["edit-todo-form"]} ${
           state === "entering"

@@ -31,14 +31,13 @@ const LogoutModal = (props) => {
       unmountOnExit
     >
       {(state) => {
-        const lougoutModalClasses = `${classes["logout-wrap"]} ${
+        const modalClasses = `${classes["logout-wrap"]} ${
           state === "entering"
             ? classes.showModal
             : state === "exiting"
             ? classes.hideModal
             : null
         }`;
-
         return (
           <Fragment>
             {createPortal(
@@ -46,7 +45,7 @@ const LogoutModal = (props) => {
               document.getElementById("backdrop")
             )}
             {createPortal(
-              <div className={lougoutModalClasses}>
+              <div className={modalClasses}>
                 <h1 className={classes["logout-title"]}>!!! INFO !!!</h1>
 
                 <p className={classes["logout-text"]}>

@@ -27,6 +27,11 @@
   border: 1px solid #000;
 }
 
+.invalid {
+  border: 1px solid red;
+  background-color: pink;
+}
+
 .add-todo-btn {
   font-size: 2.5rem;
   font-weight: 700;
