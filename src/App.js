@@ -16,6 +16,7 @@ const App = () => {
   const todos = useSelector((state) => state.todos.todos);
   const isEditing = useSelector((state) => state.todos.isEditing);
   const logoutModal = useSelector((state) => state.login.logoutModal);
+  const removeTodos = useSelector((state) => state.login.removeTodos);
 
   useEffect(() => {
     if (localStorage.getItem("login")) {
@@ -35,7 +36,7 @@ const App = () => {
       const response = await fetch(url);
       const data = await response.json();
 
-      dispatch(todoActions.fetchTodos(data));
+      dispatch(todoActions.fetchTodos(data || []));
     };
     fetchData();
   }, [dispatch]);
@@ -59,6 +60,13 @@ const App = () => {
 
     sendData();
   }, [todos]);
+
+  useEffect(() => {
+    if (removeTodos) {
+      console.log("remove todos");
+      dispatch(todoActions.removeAllTodos());
+    }
+  }, [removeTodos, dispatch]);
 
   return (
     <main>

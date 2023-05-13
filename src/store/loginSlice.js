@@ -2,7 +2,12 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const loginSlice = createSlice({
   name: "login",
-  initialState: { isLoggedIn: false, userName: "", logoutModal: false },
+  initialState: {
+    isLoggedIn: false,
+    userName: "",
+    logoutModal: false,
+    removeTodos: false,
+  },
   reducers: {
     login(state, action) {
       const userName = action.payload.userName;
@@ -21,6 +26,7 @@ const loginSlice = createSlice({
       state.userName = "";
       localStorage.removeItem("login");
       state.logoutModal = false;
+      state.removeTodos = true;
     },
   },
 });

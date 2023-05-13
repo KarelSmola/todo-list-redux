@@ -28,6 +28,8 @@ const todoSlice = createSlice({
     },
     resetValues(state) {
       state.todo = { id: "", title: "" };
+      state.todoInput = "";
+      state.todoInputIsTouched = false;
     },
     removeTodo(state, action) {
       const id = action.payload;
@@ -50,6 +52,9 @@ const todoSlice = createSlice({
     },
     cancelEditForm(state) {
       state.isEditing = false;
+    },
+    removeAllTodos(state) {
+      state.todos = [];
     },
   },
 });
