@@ -16,7 +16,6 @@ const App = () => {
   const todos = useSelector((state) => state.todos.todos);
   const isEditing = useSelector((state) => state.todos.isEditing);
   const logoutModal = useSelector((state) => state.login.logoutModal);
-  const removeTodos = useSelector((state) => state.login.removeTodos);
 
   useEffect(() => {
     if (localStorage.getItem("login")) {
@@ -61,12 +60,7 @@ const App = () => {
     sendData();
   }, [todos]);
 
-  useEffect(() => {
-    if (removeTodos) {
-      console.log("remove todos");
-      dispatch(todoActions.removeAllTodos());
-    }
-  }, [removeTodos, dispatch]);
+
 
   return (
     <main>

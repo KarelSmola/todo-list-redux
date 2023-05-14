@@ -53,9 +53,6 @@ const todoSlice = createSlice({
     cancelEditForm(state) {
       state.isEditing = false;
     },
-    removeAllTodos(state) {
-      state.todos = [];
-    },
   },
 });
 
