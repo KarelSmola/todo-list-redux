@@ -15,3 +15,10 @@
 .button:active {
   transform: translateY(0.2rem);
 }
+
+/* 600px = 37.5em */
+@media (max-width: 37.5em) {
+  .button {
+    padding: 0.5rem;
+  }
+}

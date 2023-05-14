@@ -38,6 +38,9 @@
 }
 
 .login-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   font-size: 2.5rem;
   font-weight: 700;
   background-color: #fff;
@@ -48,4 +51,8 @@
 .login-btn:hover {
   background-color: var(--color-primary);
   color: #fff;
+}
+
+.login-btn-text {
+  font-size: 2rem;
 }

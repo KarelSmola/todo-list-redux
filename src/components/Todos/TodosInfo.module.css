@@ -2,11 +2,29 @@
   display: flex;
   justify-content: center;
   padding: 1rem;
-  width: 30vw;
+  width: 70rem;
   border: 1px solid var(--color-primary);
 }
 
 .todos-info {
   font-size: 2rem;
   font-weight: 700;
+}
+
+/* 800px = 50em */
+@media (max-width: 50em) {
+  .todos-info-wrap {
+    width: 50rem;
+  }
+}
+
+/* 600px = 37.5em */
+@media (max-width: 37.5em) {
+  .todos-info-wrap {
+    width: 30rem;
+  }
+
+  .todos-info {
+    font-size: 1.6rem;
+  }
 }

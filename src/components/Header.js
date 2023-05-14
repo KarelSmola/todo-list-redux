@@ -21,9 +21,12 @@ const Header = () => {
         <div className={classes.logo}>Todo list</div>
         {isLoggedIn && (
           <div className={classes["login-info"]}>
-            <h1 className={classes["user-name"]}>User name: {userName}</h1>
+            <div className={classes["user-name-wrap"]}>
+              <h2 className={classes["user-name-title"]}>User name:</h2>
+              <p className={classes["user-name"]}>{userName}</p>
+            </div>
             <Button className={classes["logout-btn"]} onClick={logoutHandler}>
-              <LogOut />
+              <p className={classes["logout-btn-text"]}>Logout</p> <LogOut />
             </Button>
           </div>
         )}

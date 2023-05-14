@@ -60,8 +60,6 @@ const App = () => {
     sendData();
   }, [todos]);
 
-
-
   return (
     <main>
       <Header />

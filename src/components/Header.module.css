@@ -20,11 +20,23 @@
   gap: 2rem;
 }
 
+.user-name-wrap {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-name-title {
+  font-size: 2.3rem;
+}
+
 .user-name {
   font-size: 2rem;
 }
 
 .logout-btn {
+  display: flex;
+  gap: 0.5rem;
   font-size: 2.5rem;
   font-weight: 700;
   background-color: #fff;
@@ -34,4 +46,27 @@
 .logout-btn:hover {
   background-color: orangered;
   color: #fff;
+}
+
+.logout-btn-text {
+  font-size: 2rem;
+}
+
+/* 600px = 37.5em */
+@media (max-width: 37.5em) {
+  .logout-btn-text {
+    display: none;
+  }
+
+  .login-info {
+    gap: 1rem;
+  }
+
+  .user-name-title {
+    display: none;
+  }
+
+  .user-name {
+    font-size: 2rem;
+  }
 }

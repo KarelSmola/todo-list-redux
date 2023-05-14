@@ -65,7 +65,7 @@ const TodoForm = () => {
         />
       </div>
       <Button className={classes["add-todo-btn"]} type="submit">
-        <Add />
+        <p className={classes["add-todo-btn-text"]}>Add todo</p><Add />
       </Button>
     </form>
   );

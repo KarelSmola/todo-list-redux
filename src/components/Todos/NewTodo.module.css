@@ -4,7 +4,7 @@
   align-items: center;
   gap: 1rem;
   padding: 1rem 2rem;
-  width: 40vw;
+  width: 60rem;
   border: 1px solid var(--color-primary);
   transition: all 0.5s ease-out;
 }
@@ -51,4 +51,33 @@
 
 .remove-btn:focus {
   outline: 1px solid orangered;
+}
+
+/* 800px = 50em */
+@media (max-width: 50em) {
+  .todo {
+    width: 45rem;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .edit-btn,
+  .remove-btn {
+    font-size: 1.8rem;
+  }
+}
+
+/* 600px = 37.5em */
+@media (max-width: 37.5em) {
+  .todo {
+    flex-direction: column;
+    width: 30rem;
+  }
+
+  .edit-btn,
+  .remove-btn {
+    padding: 0.5rem 2rem;
+  }
 }

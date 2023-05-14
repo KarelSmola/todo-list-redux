@@ -2,6 +2,10 @@
 .label-wrap {
   display: flex;
   align-items: center;
+  justify-content: center;
+}
+
+.label-wrap {
   gap: 1rem;
 }
 
@@ -9,11 +13,17 @@
   padding: 2rem 7rem;
   border: 1px solid var(--color-primary);
   box-shadow: 4px 4px var(--color-primary);
+  width: 70rem;
+}
+
+.form {
+  gap: 2rem;
 }
 
 .label {
   font-size: 2.5rem;
   font-weight: 700;
+  color: var(--color-primary);
 }
 
 .input {
@@ -47,4 +57,59 @@
 
 .add-todo-btn:focus {
   outline: 1px solid var(--color-primary);
+}
+
+.add-todo-btn-text {
+  display: none;
+}
+
+/* 800px = 50em */
+@media (max-width: 50em) {
+  .form {
+    width: 50rem;
+  }
+
+  .label,
+  .add-todo-btn {
+    font-size: 2rem;
+  }
+
+  .input {
+    padding: 0.8rem;
+  }
+}
+
+/* 600px = 37.5em */
+@media (max-width: 37.5em) {
+  .form {
+    flex-direction: column;
+    width: 30rem;
+    padding: 1rem;
+  }
+
+  .label-wrap {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .label {
+    font-size: 2.5rem;
+  }
+
+  .input {
+    width: 90%;
+  }
+
+  .add-todo-btn {
+    font-size: 2rem;
+    padding: 1rem 3rem;
+  }
+
+  .add-todo-btn svg {
+    display: none;
+  }
+
+  .add-todo-btn-text {
+    display: block;
+  }
 }

@@ -81,6 +81,7 @@ const LoginForm = () => {
         />
       </div>
       <Button type="submit" className={classes["login-btn"]}>
+        <p className={classes["login-btn-text"]}>Login</p>
         <LogIn />
       </Button>
     </form>
